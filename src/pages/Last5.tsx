@@ -131,8 +131,8 @@ const PDFSvg = () =>{
     role:string
   }
 
-  const BASE_URL_OFERTA = "https://cotizacionapi.azurewebsites.net/Api/CotizacionesOferta";
-  const BASE_URL_TOTAL = "https://cotizacionapi.azurewebsites.net/Api/CotizacionesTotal";
+  const BASE_URL_OFERTA = "https://cotizacionesback.azurewebsites.net/Api/CotizacionesOferta";
+  const BASE_URL_TOTAL = "https://cotizacionesback.azurewebsites.net/Api/CotizacionesTotal";
 
   function Last5() {
     return <div>Last5</div>;
@@ -183,7 +183,7 @@ const PDFSvg = () =>{
           console.log(err);
         });
 
-        axios.get("https://cotizacionapi.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
+        axios.get("https://cotizacionesback.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
     .then(res=>{
       setUser(res.data)
       // console.log(res.data)
@@ -380,7 +380,7 @@ const PDFSvg = () =>{
           console.log(err);
         });
 
-        axios.get("https://cotizacionapi.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
+        axios.get("https://cotizacionesback.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
     .then(res=>{
       console.log(res.data)
       setUser(res.data)

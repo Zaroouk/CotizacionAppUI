@@ -9,7 +9,7 @@ import lost from '../assets/Working from anywhere-amico.svg'
 
 
 function ErrorRoute() {
-    // const BASE_URL = 'https://cotizacionapi.azurewebsites.net/Api/User/'
+    // const BASE_URL = 'https://cotizacionesback.azurewebsites.net/Api/User/'
     const[error,setError] = useState(0)
     const config = {
         headers: {

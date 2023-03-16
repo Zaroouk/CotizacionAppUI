@@ -48,7 +48,7 @@ function DrawerComponent(avatar:any) {
   const [index,setIndex] = useState(0)
 
   useEffect(() => {
-    axios.get("https://cotizacionapi.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
+    axios.get("https://cotizacionesback.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
         .then(res=>{
           setUser(res.data)
           setIndex(res.data.avatar)

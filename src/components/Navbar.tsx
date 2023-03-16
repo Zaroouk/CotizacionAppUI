@@ -210,7 +210,7 @@ function MenuNavbarUser({index}:any) {
 function MenuDrawerUser({index}:any) {
   const i = parseInt(index)
   const [user,setUser] = useState<User>()
-  axios.get("https://cotizacionapi.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
+  axios.get("https://cotizacionesback.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
         .then(res=>{
 
           setUser(res.data)

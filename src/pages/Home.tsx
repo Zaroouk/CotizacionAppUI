@@ -130,8 +130,8 @@ interface User{
   role:string
 }
 
-const BASE_URL_OFERTA = "https://cotizacionapi.azurewebsites.net/Api/CotizacionesOferta";
-const BASE_URL_TOTAL = "https://cotizacionapi.azurewebsites.net/Api/CotizacionesTotal";
+const BASE_URL_OFERTA = "https://cotizacionesback.azurewebsites.net/Api/CotizacionesOferta";
+const BASE_URL_TOTAL = "https://cotizacionesback.azurewebsites.net/Api/CotizacionesTotal";
 
 function Home() {
   return <div>Home</div>;
@@ -182,7 +182,7 @@ const [user,setUser] = useState<User>()
         console.log(err);
       });
 
-      axios.get("https://cotizacionapi.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
+      axios.get("https://cotizacionesback.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
   .then(res=>{
     setUser(res.data)
     // console.log(res.data)
@@ -382,7 +382,7 @@ const [cotizaciones,setCotizaciones] = useState<CotizacionTotal[]>([])
         console.log(err);
       });
 
-      axios.get("https://cotizacionapi.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
+      axios.get("https://cotizacionesback.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
   .then(res=>{
     console.log(res.data)
     setUser(res.data)

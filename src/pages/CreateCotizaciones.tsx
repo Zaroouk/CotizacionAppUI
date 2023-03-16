@@ -46,7 +46,7 @@ const PDFSvg = () =>{
 </Icon>
 }
 
-const BASE_URL = "https://cotizacionapi.azurewebsites.net/Api/";
+const BASE_URL = "https://cotizacionesback.azurewebsites.net/Api/";
 
 interface DecodedToken {
   userId: String;
@@ -195,7 +195,7 @@ export function Oferta() {
     // const decodedToken = jwtDecode(token) as DecodedToken;
     // const role = decodedToken.role.toString();
 
-    axios.get("https://cotizacionapi.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
+    axios.get("https://cotizacionesback.azurewebsites.net/Api/User/GetCurrentUserInfo",config)
     .then(res=>{
       setUserId(res.data.userId)
       console.log(res.data)

@@ -29,7 +29,7 @@ interface DecodedToken {
   iat:number
 }
 
-const BASE_URL = "https://cotizacionapi.azurewebsites.net/Api/Auth/";
+const BASE_URL = "https://cotizacionesback.azurewebsites.net/Api/Auth/";
 function ModalLogin({TokenSetter,RoleSetter,UserSetter}:any) {
   return (
   <div>
@@ -164,9 +164,9 @@ function SignUp() {
     const config = {
       'Accept': 'application/json',
       'Content-Type': 'application/json;charset=UTF-8',
-      'Access-Control-Allow-Origin': '*',
+      // 'Access-Control-Allow-Origin': '*',
     }
-    axios.post(BASE_URL+"Login",data,{headers:config})
+    axios.post(BASE_URL+"Login",datos,{headers:config})
     .then(res => {
       // console.log(res.data)
       const decodedToken = jwtDecode(res.data.Token) as DecodedToken
@@ -211,8 +211,9 @@ function SignUp() {
       'Access-Control-Allow-Origin': '*',
     }
 
-    axios.post(BASE_URL+"Register",data,{headers:config})
+    axios.post(BASE_URL+"Register",datos,{headers:config})
     .then(res => {
+      console.log(res)
       loginHandler()
     })
     .catch(err => console.log(err))

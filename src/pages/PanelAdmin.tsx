@@ -41,7 +41,7 @@ interface User {
   userId: number;
 }
 
-const BASE_URL = "https://cotizacionapi.azurewebsites.net/Api/User";
+const BASE_URL = "https://cotizacionesback.azurewebsites.net/Api/User";
 
 function PanelAdmin({ token }: any) {
   const statusColor = (status: any) => {
