@@ -168,7 +168,7 @@ const [user,setUser] = useState<User>()
 
     const config = {
       headers: {
-        // "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "*",
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json; charset=utf-8",
       },
@@ -195,7 +195,7 @@ const [user,setUser] = useState<User>()
   {
     const config = {
       headers: {
-        // "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "*",
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json; charset=utf-8",
       },
@@ -222,7 +222,7 @@ const [user,setUser] = useState<User>()
       responseType: "arraybuffer", // set the responseType to arraybuffer to receive the PDF file data
     };
     axios
-      .get(BASE_URL_OFERTA + `CotizacionesOferta/downloadPDF/${transactionId}`, config)
+      .get(BASE_URL_OFERTA + `/downloadPDF/${transactionId}`, config)
       .then((res) => {
         const pdfBlob = new Blob([res.data], { type: "application/pdf" });
         const pdfUrl = URL.createObjectURL(pdfBlob);
@@ -412,7 +412,7 @@ const [cotizaciones,setCotizaciones] = useState<CotizacionTotal[]>([])
       responseType: "arraybuffer", // set the responseType to arraybuffer to receive the PDF file data
     };
     axios
-      .get(BASE_URL_TOTAL + `CotizacionesTotal/downloadPDF/${transactionId}`, config)
+      .get(BASE_URL_TOTAL + `/downloadPDF/${transactionId}`, config)
       .then((res) => {
         const pdfBlob = new Blob([res.data], { type: "application/pdf" });
         const pdfUrl = URL.createObjectURL(pdfBlob);

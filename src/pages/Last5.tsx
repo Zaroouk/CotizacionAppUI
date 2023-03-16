@@ -410,7 +410,7 @@ const PDFSvg = () =>{
         responseType: "arraybuffer", // set the responseType to arraybuffer to receive the PDF file data
       };
       axios
-        .get(BASE_URL_TOTAL + `CotizacionesTotal/downloadPDF/${transactionId}`, config)
+        .get(BASE_URL_TOTAL + `/downloadPDF/${transactionId}`, config)
         .then((res) => {
           const pdfBlob = new Blob([res.data], { type: "application/pdf" });
           const pdfUrl = URL.createObjectURL(pdfBlob);
